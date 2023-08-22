@@ -9,13 +9,14 @@ use App\Models\Book;
 class BookController extends Controller
 {
     public function bookApi(){
-        return response()-> json([
-            'message' => 'Hello world'
+        $books = book ::all();
+        return response()->json([
+            'books' => $books
         ]);
     }
 
     public function bookIndex(){
-        $books = book ::all();
+        $books = book ::paginate(5);
         return response()->json([
             'books' => $books
         ]);
