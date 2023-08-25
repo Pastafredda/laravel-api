@@ -21,4 +21,11 @@ class BookController extends Controller
             'books' => $books
         ]);
     }
+
+    public function bookShow($id){
+        $books = Book :: findOrFail($id);
+        return response() -> json([
+            'books' => $books
+        ]);
+    }
 }

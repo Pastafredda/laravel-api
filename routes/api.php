@@ -23,6 +23,8 @@ Route :: prefix('/v1')->group(function(){
     Route :: get('/book-api',[BookController :: class , 'bookApi']);
 
     Route :: get('/book-index', [BookController :: class , 'bookIndex']);
+
+    Route :: get('/book-show/{id}', [BookController :: class, 'bookShow']);
 });
 
 
