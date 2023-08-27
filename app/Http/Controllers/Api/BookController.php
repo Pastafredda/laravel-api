@@ -23,7 +23,7 @@ class BookController extends Controller
     }
 
     public function bookShow($id){
-        $books = Book :: findOrFail($id);
+        $books = Book :: with(['type','technologies'])-> findOrFail($id);
         return response() -> json([
             'books' => $books
         ]);
